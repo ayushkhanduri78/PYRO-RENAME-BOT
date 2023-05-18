@@ -102,7 +102,7 @@ async def doc(bot, update):
          except Exception as e:
              return await ms.edit(text=f"Yᴏᴜʀ Cᴀᴩᴛɪᴏɴ Eʀʀᴏʀ Exᴄᴇᴩᴛ Kᴇyᴡᴏʀᴅ Aʀɢᴜᴍᴇɴᴛ ●> ({e})")             
     else:
-         caption = f"**{new_filename}**"
+         caption = f"**`{new_filename}`**"
  
     if (media.thumbs or c_thumb):
          if c_thumb:
@@ -144,13 +144,13 @@ async def doc(bot, update):
 	        progress=progress_for_pyrogram,
 	        progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
     except Exception as e:          
-        os.remove(file_path)
+        os.remove(`file_path`)
         if ph_path:
             os.remove(ph_path)
         return await ms.edit(f" Eʀʀᴏʀ {e}")
  
     await ms.delete() 
-    os.remove(file_path) 
+    os.remove(`file_path`) 
     if ph_path: os.remove(ph_path) 
 
 
