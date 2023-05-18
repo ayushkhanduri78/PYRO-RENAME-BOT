@@ -128,7 +128,7 @@ async def doc(bot, update):
         elif type == "video": 
             await bot.send_video(
 		update.message.chat.id,
-	        video=file_path,
+	        video=`file_path`,
 	        caption=caption,
 		thumb=ph_path,
 		duration=duration,
@@ -137,20 +137,20 @@ async def doc(bot, update):
         elif type == "audio": 
             await bot.send_audio(
 		update.message.chat.id,
-		audio=file_path,
+		audio=`file_path`,
 		caption=caption,
 		thumb=ph_path,
 		duration=duration,
 	        progress=progress_for_pyrogram,
 	        progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
     except Exception as e:          
-        os.remove(`file_path`)
+        os.remove(file_path)
         if ph_path:
             os.remove(ph_path)
         return await ms.edit(f" Eʀʀᴏʀ {e}")
  
     await ms.delete() 
-    os.remove(`file_path`) 
+    os.remove(file_path) 
     if ph_path: os.remove(ph_path) 
 
 
