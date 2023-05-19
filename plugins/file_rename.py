@@ -128,7 +128,7 @@ async def doc(bot, update):
         elif type == "video": 
             await bot.send_video(
 		update.message.chat.id,
-	        video=`file_path`,
+	        video=file_path,
 	        caption=caption,
 		thumb=ph_path,
 		duration=duration,
@@ -137,7 +137,7 @@ async def doc(bot, update):
         elif type == "audio": 
             await bot.send_audio(
 		update.message.chat.id,
-		audio=`file_path`,
+		audio=file_path,
 		caption=caption,
 		thumb=ph_path,
 		duration=duration,
